@@ -89,7 +89,7 @@
             "hexPrimaryColor": "GREEN",
             "exampleFeedData": {
                 "title": "Jetpack Example Podcast",
-                "link": "https://jetpack.com",
+                "link": "https://jetpack.com/",
                 "cover": "https://jetpackme.files.wordpress.com/2020/05/jetpack-example-podcast-cover.png?w=160",
                 "tracks": [
                     {
