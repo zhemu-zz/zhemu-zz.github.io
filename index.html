@@ -191,29 +191,36 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <link rel="apple-touch-icon" href="/wp-content/uploads/2026/04/cropped-%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260412122356_95_2-180x180.jpg">
 <meta name="msapplication-TileImage" content="/wp-content/uploads/2026/04/cropped-微信图片_20260412122356_95_2-270x270.jpg">
 		<style id="wp-custom-css">
-			.hide-audio-player {
+			./* 隐藏音频播放器 */
+.hide-audio-player {
   position: absolute !important;
   left: -9999px !important;
   width: 1px !important;
   height: 1px !important;
 }
+
+/* 全局背景图 - 核心修复：用相对路径，绝对不能用localhost！ */
 body {
-    background-image: url("/wp-content/uploads/2026/04/cropped-微信图片_20260412122356_95_2.jpg") !important;
-    background-size: cover !important;
-    background-position: center center !important;
-    background-attachment: fixed !important;
-    background-repeat: no-repeat !important;
-    /* 去掉白色遮罩 */
-    background-color: transparent !important;
+  /* 把图片文件名换成你自己的，路径用wp-content/uploads/... 相对路径 */
+  background-image: url("http://localhost/wp-content/uploads/2026/04/cropped-微信图片_20260412122356_95_2.jpg") !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-attachment: fixed !important;
+  background-repeat: no-repeat !important;
+  /* 去掉白色遮罩 */
+  background-color: transparent !important;
 }
-/* 给文字加黑色阴影，保证在背景图上能看清 */
-.home .entry-title a, .archive .entry-title a {
-    color: #fff !important;
-    text-shadow: 0 0 4px rgba(0,0,0,0.8) !important;
+
+/* 给所有文字加黑色阴影，保证在背景图上能看清 */
+/* 修复选择器：覆盖所有页面的标题、正文、导航 */
+.entry-title a, .entry-meta, .site-title a, .nav-menu a, p, h1, h2, h3 {
+  color: #fff !important;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.8) !important;
 }
-.home .entry-meta, .archive .entry-meta {
-    color: #fff !important;
-    text-shadow: 0 0 4px rgba(0,0,0,0.8) !important;
+
+/* 强制覆盖主题的白色背景 */
+.site-content, .site-header, .site-footer {
+  background-color: transparent !important;
 }		</style>
 		</head>
 
